@@ -117,7 +117,7 @@
 </head>
 <body>
   <main id="topZone" class="zone zone-top" aria-label="시작: 가고 싶은 장소 말하기">
-    <div class="badge" id="currentLocationBadge">현재 위치: 2층계딘</div>
+    <div class="badge" id="currentLocationBadge">현재 위치: 2층 로비</div>
     <div class="zone-icon" aria-hidden="true">🎤</div>
     <h1 class="zone-title">말하기</h1>
     <p class="zone-desc">화면 위쪽을 누르고<br />가고 싶은 장소를 말하세요</p>
@@ -151,8 +151,8 @@
     const ROUTES = {
       "l2__to":["현 위치에서 6보 직진하세요",],
       "l2__m":["음악실은 2층에 있습니다"],
-      "l2__dubit":["두빛나래는 2층에 있습니다"],
-      "l2__tw"
+      "l2__dubit":["두빛나래는 2층에 있습니다"]
+      // "l2__tw": ["..."]  ← tw 장소를 LOCATIONS에 등록한 뒤 경로를 채우세요
     };
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -235,7 +235,7 @@
       const params = new URLSearchParams(window.location.search);
       const fromParam = params.get("from");
       if (fromParam && LOCATIONS[fromParam]) return fromParam;
-      return "gate";
+      return "l2";
     }
 
     function getRoute(fromId, toId) {
