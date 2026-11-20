@@ -117,7 +117,7 @@
 </head>
 <body>
   <main id="topZone" class="zone zone-top" aria-label="시작: 가고 싶은 장소 말하기">
-    <div class="badge" id="currentLocationBadge">현재 위치: 정문</div>
+    <div class="badge" id="currentLocationBadge">현재 위치: 2층 로비</div>
     <div class="zone-icon" aria-hidden="true">🎤</div>
     <h1 class="zone-title">말하기</h1>
     <p class="zone-desc">화면 위쪽을 누르고<br />가고 싶은 장소를 말하세요</p>
@@ -182,7 +182,7 @@
     let isRecognizing = false;
     let micReady = false;
     let koreanVoice = null;
-    let currentLocationId = "gate";
+    let currentLocationId = "l2";
     let lastSpokenText = "";
     let currentUtterance = null;
     // NFC로 열면 브라우저가 첫 안내 자동재생을 막을 수 있음.
@@ -254,7 +254,7 @@
       const params = new URLSearchParams(window.location.search);
       const fromParam = params.get("from");
       if (fromParam && LOCATIONS[fromParam]) return fromParam;
-      return "gate";
+      return "l2";
     }
 
     function getRoute(fromId, toId) {
