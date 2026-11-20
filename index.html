@@ -227,7 +227,7 @@
       currentUtterance = utterance;
       utterance.lang = "ko-KR";
       if (koreanVoice) utterance.voice = koreanVoice;
-      utterance.rate = 0.95;
+      utterance.rate = 0.8;
       utterance.pitch = 1.0;
       utterance.volume = 1.0;
 
@@ -299,7 +299,8 @@
         return;
       }
 
-      const spokenFull = `${fromName}에서 ${destinationName}까지 안내를 시작합니다. ${steps.join(" ")}`;
+      
+      const spokenFull = `${fromName}에서 ${destinationName}까지 안내를 시작합니다. ${steps.map(s => s.replace(/[.\s]*$/, ".")).join(" ")}`;
       setResultHTML(`<h2>${fromName} → ${destinationName}</h2><ol>${steps.map(step => `<li>${step}</li>`).join("")}</ol>`, spokenFull);
       statusText.textContent = `${destinationName} 안내를 시작합니다.`;
       speak(spokenFull);
