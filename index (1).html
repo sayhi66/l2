@@ -145,14 +145,17 @@
       ad: { name: "행정실", aliases: ["행정실", "행 정실"] },
       sp: { name: "과학 준비실", aliases: ["과학 준비실", "과학준비실"] },
       m: { name: "음악실", aliases:["음악실"]},
-      to: { name: "2층 교무실", aliases:["교무실","2층교무실"] }
+      to: { name: "2층 교무실", aliases:["교무실","2층교무실"] },
+      tw: { name: "남자화장실", aliases:["남자화장실","남자 화장실","남화장실","남자 화장 실"] }
     };
 
     const ROUTES = {
       "l2__to":["현 위치에서 6보 직진하세요",],
       "l2__m":["음악실은 2층에 있습니다"],
       "l2__dubit":["두빛나래는 2층에 있습니다"]
-      // "l2__tw": ["..."]  ← tw 장소를 LOCATIONS에 등록한 뒤 경로를 채우세요
+      // 남자화장실 경로: 아래 줄 맨 앞의 // 를 지우고 ○ 에 보 수를 적으세요.
+      // 앞 줄("l2__dubit" 줄) 끝에 쉼표(,)를 꼭 붙이세요.
+      // "l2__tw": ["현 위치에서 ○보 직진하세요.", "○회전해서 ○보 직진하세요.", "○쪽에 문이 있습니다."]
     };
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
